@@ -1,1 +1,14 @@
-Hello Websocket
+<html>
+    <head></head>
+    <body>
+        Hello from websocket
+    </body>
+
+    <script>
+        const protocol = window.location.protocol === 'https:'? 'wss': 'ws'
+        const ws = new WebSocket(`${protocol}://${window.location.host}`)
+
+        ws.onmessage = event => console.log(event.data)
+
+    </script>
+</html>
